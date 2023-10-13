@@ -1,4 +1,4 @@
-require "./lib/node"
+require './spec/spec_helper'
 
 require "pry"
 

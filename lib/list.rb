@@ -6,7 +6,7 @@ require "pry"
 
 
 class LinkedList
-  attr_reader :head,
+  attr_reader :head
 
   def initialize
     @head = nil
@@ -40,23 +40,14 @@ class LinkedList
     end
   end
 
-  # def to_string
-  #   last_node = @head
-  #   while(!last_node.next_node.data.nil?)
-  #       last_node = last_node.next_node
-  #       p last_node.data
-  #   end
-        
-
-  #   # if @head.next_node == nil
-  #   #   p @head.data
-  #   # else
-  #   #   while(!next_node.nil?)
-  #   #   p @head.next_node.data
-  #   #   end
-  #   # end
-  # end
-
-
-
+  def to_string
+    all_node_data = ""
+    current_node = @head
+    until(current_node.next_node.nil?)
+     all_node_data << " #{current_node.data}"
+     current_node = current_node.next_node
+    end
+    all_node_data << " #{current_node.data}"
+    all_node_data.lstrip
+  end
 end

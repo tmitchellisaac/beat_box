@@ -45,8 +45,7 @@ def insert(insert_position,data_input)
       @head = Node.new(data_input)
   elsif insert_position == 0 
     inserted_node = Node.new(data_input)
-    list_placeholder = @head
-    inserted_node.next_node = list_placeholder
+    inserted_node.next_node = @head
     @head = inserted_node
   else
     current_node = @head
@@ -59,10 +58,6 @@ def insert(insert_position,data_input)
       inserted_node.next_node = current_node.next_node
       current_node.next_node = inserted_node
   end
-
-
-
-
 end
 
   def prependd(data_input)

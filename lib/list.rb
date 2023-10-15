@@ -66,7 +66,22 @@ end
     @head = first_node
   end
 
-
+  def find(returned_position, number_of_returned_elements)
+    current_node = @head
+    pos = 0
+    until(pos == returned_position)
+      current_node = current_node.next_node
+      pos += 1
+    end
+    all_node_data = ""
+    pos_range = 0
+    until(pos_range == number_of_returned_elements)
+    all_node_data << " #{current_node.data}"
+      current_node = current_node.next_node
+      pos_range += 1
+    end
+    all_node_data.lstrip
+  end
 
   def to_string
     all_node_data = ""

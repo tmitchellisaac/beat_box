@@ -141,4 +141,13 @@ RSpec.describe LinkedList do
     expect(list_1.to_string).to eq("woop suu doop schwoop ploop")
    end
 
+   it "has a find method" do
+    list_1 = LinkedList.new
+    list_1.append("doop")
+    list_1.append("ploop")
+    list_1.prependd("suu")
+    list_1.prependd("woop")
+    list_1.insert(3, "schwoop")
+    expect(list_1.find(1,2)).to eq("suu doop")
+   end
 end

@@ -40,25 +40,25 @@ class LinkedList
     end
   end
 
-def insert(insert_position,data_input)
-  if @head == nil
+  def insert(insert_position,data_input)
+    if @head == nil
       @head = Node.new(data_input)
-  elsif insert_position == 0 
-    inserted_node = Node.new(data_input)
-    inserted_node.next_node = @head
-    @head = inserted_node
-  else
-    current_node = @head
-    pos = 1
-    until(pos == insert_position)
-      pos += 1
-      current_node = current_node.next_node
-    end
+    elsif insert_position == 0 
       inserted_node = Node.new(data_input)
-      inserted_node.next_node = current_node.next_node
-      current_node.next_node = inserted_node
+      inserted_node.next_node = @head
+      @head = inserted_node
+    else
+      current_node = @head
+      pos = 1
+      until(pos == insert_position)
+        pos += 1
+        current_node = current_node.next_node
+      end
+        inserted_node = Node.new(data_input)
+        inserted_node.next_node = current_node.next_node
+        current_node.next_node = inserted_node
+    end
   end
-end
 
   def prependd(data_input)
     first_node = Node.new(data_input)

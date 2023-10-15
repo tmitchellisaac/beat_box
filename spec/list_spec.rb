@@ -111,7 +111,7 @@ RSpec.describe LinkedList do
     expect(list_1.to_string).to eq("foop schwoop nana woop suu doop ploop")
   end
 
-   it "has an insert method that inserts at the 1 index position" do
+  it "has an insert method that inserts at the 1 index position" do
     list_1 = LinkedList.new
     list_1.append("doop")
     list_1.append("ploop")
@@ -119,9 +119,9 @@ RSpec.describe LinkedList do
     list_1.prependd("woop")
     list_1.insert(1, "schwoop")
     expect(list_1.to_string).to eq("woop schwoop suu doop ploop")
-   end
+  end
 
-   it "has an insert method that inserts at the 1 index position" do
+  it "has an insert method that inserts at the 1 index position" do
     list_1 = LinkedList.new
     list_1.append("doop")
     list_1.append("ploop")
@@ -129,9 +129,9 @@ RSpec.describe LinkedList do
     list_1.prependd("woop")
     list_1.insert(2, "schwoop")
     expect(list_1.to_string).to eq("woop suu schwoop doop ploop")
-   end
+  end
 
-   it "has an insert method that inserts at the 1 index position" do
+  it "has an insert method that inserts at the 1 index position" do
     list_1 = LinkedList.new
     list_1.append("doop")
     list_1.append("ploop")
@@ -139,9 +139,9 @@ RSpec.describe LinkedList do
     list_1.prependd("woop")
     list_1.insert(3, "schwoop")
     expect(list_1.to_string).to eq("woop suu doop schwoop ploop")
-   end
+  end
 
-   it "has a find method" do
+  it "has a find method" do
     list_1 = LinkedList.new
     list_1.append("doop")
     list_1.append("ploop")
@@ -149,5 +149,46 @@ RSpec.describe LinkedList do
     list_1.prependd("woop")
     list_1.insert(3, "schwoop")
     expect(list_1.find(1,2)).to eq("suu doop")
-   end
+  end
+
+  it "has a find method" do
+    list_1 = LinkedList.new
+    list_1.append("doop")
+    list_1.append("ploop")
+    list_1.prependd("suu")
+    list_1.prependd("woop")
+    list_1.insert(3, "schwoop")
+    expect(list_1.find(1,3)).to eq("suu doop schwoop")
+  end
+
+  it "has a pop method to return last node in list" do
+    list_1 = LinkedList.new
+    list_1.append("doop")
+    list_1.append("ploop")
+    list_1.prependd("suu")
+    list_1.prependd("woop")
+    list_1.insert(3, "schwoop")
+    expect(list_1.pop).to eq("ploop")
+  end 
+
+  it "has an includes? method" do
+    list_1 = LinkedList.new
+    list_1.append("doop")
+    list_1.append("ploop")
+    list_1.prependd("suu")
+    list_1.prependd("woop")
+    list_1.insert(3, "schwoop")
+    expect(list_1.includes?("poop")).to eq(false)
+  end
+
+  it "has an includes? method" do
+    list_1 = LinkedList.new
+    list_1.append("doop")
+    list_1.append("ploop")
+    list_1.prependd("suu")
+    list_1.prependd("woop")
+    list_1.insert(3, "schwoop")
+    expect(list_1.includes?("ploop")).to eq(true)
+  end
+
 end

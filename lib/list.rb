@@ -83,6 +83,31 @@ end
     all_node_data.lstrip
   end
 
+  def pop 
+    current_node = @head
+    until(current_node.next_node.nil?)
+    current_node = current_node.next_node
+    end
+    current_node.data
+  end
+
+  def includes?(query)
+    #given a string and must return a boolean
+    current_node = @head
+    until(current_node.next_node == nil)
+      if current_node.data == (query)
+        return true
+      end
+      current_node = current_node.next_node
+    end
+
+    if current_node.data == (query)
+      true
+    else
+      false
+    end
+  end
+
   def to_string
     all_node_data = ""
     current_node = @head

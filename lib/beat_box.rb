@@ -6,10 +6,8 @@ class BeatBox
   end
 
   def append(data_input)
-
     separated_data_array = data_input.split(" ")
     acceptable_sounds = ["doop", "deep", "tee", "dee", "suu", "woop", "schwoop", "ploop", "boop", "beep", "bop", "la", "na", "bop", "oom", "dum", "boom"]
-    
     separated_data_array.each do |individual_data|
       if acceptable_sounds.include?(individual_data) == true
         @list.append(individual_data)
@@ -18,18 +16,16 @@ class BeatBox
     end
   end
 
-  # def prepend(data_input)
-
-  #   separated_data_array = data_input.split(" ")
-  #   acceptable_sounds = ["doop", "deep", "tee", "dee", "suu", "woop", "schwoop", "ploop", "boop", "beep", "bop", "la", "na", "bop", "oom", "dum", "boom"]
+  def prependdd(data_input)
+    separated_data_array = data_input.split(" ")
+    acceptable_sounds = ["doop", "deep", "tee", "dee", "suu", "woop", "schwoop", "ploop", "boop", "beep", "bop", "la", "na", "bop", "oom", "dum", "boom"]
+    separated_data_array.each do |individual_data|
+      if acceptable_sounds.include?(individual_data) == true
+        @list.prependd(individual_data)
+      end
     
-  #   separated_data_array.each do |individual_data|
-  #     if acceptable_sounds.include?(individual_data) == true
-  #       @list.prependd(individual_data)
-  #     end
-    
-  #   end
-  # end
+    end
+  end
 
 
 

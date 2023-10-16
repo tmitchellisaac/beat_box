@@ -1,8 +1,23 @@
 class BeatBox
   attr_accessor :list, :rate, :voice
 
-  def initialize
-    @list = LinkedList.new
+ACCEPTABLE_SOUNDS = ["doop", "deep", "tee", "dee", "suu", "woop", "schwoop", "ploop", "boop", "beep", "bop", "la", "na", "bop", "oom", "dum", "boom"]
+
+  def initialize(*bb_input)
+    if bb_input.empty?
+      @list = LinkedList.new
+    else
+      @list = LinkedList.new
+    # separated_bb_data = bb_input.split(" ")
+    acceptable_sounds = ["doop", "deep", "tee", "dee", "suu", "woop", "schwoop", "ploop", "boop", "beep", "bop", "la", "na", "bop", "oom", "dum", "boom"]
+    bb_input_string = bb_input.join
+    bb_input_array_final = bb_input_string.split
+        bb_input_array_final.each do |individual_data|
+        if acceptable_sounds.include?(individual_data) == true
+          @list.append(individual_data)
+        end
+      end
+    end
   end
 
   def append(data_input)

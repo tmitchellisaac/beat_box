@@ -10,6 +10,12 @@ RSpec.describe BeatBox do
     expect(beat_box_1).to be_instance_of BeatBox
   end
 
+  it "can take arguments" do
+    beat_box_1 = BeatBox.new("doop suu doop tee")
+    expect(beat_box_1.all).to eq("doop suu doop tee")
+  end
+    
+
   it "has a list attribute" do
     beat_box_1 = BeatBox.new
     expect(beat_box_1.list).to be_a LinkedList

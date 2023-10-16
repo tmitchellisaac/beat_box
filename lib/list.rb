@@ -15,7 +15,6 @@ class LinkedList
   def append(data_input)
     if @head == nil
       @head = Node.new(data_input)
-      
     else
       current_node = @head
       until(current_node.next_node.nil?)

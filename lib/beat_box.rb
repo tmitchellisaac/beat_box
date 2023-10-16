@@ -1,3 +1,5 @@
+require "pry"
+
 class BeatBox
   attr_accessor :list, :rate, :voice
 
@@ -23,7 +25,6 @@ ACCEPTABLE_SOUNDS = ["doop", "deep", "tee", "dee", "suu", "woop", "schwoop", "pl
       if ACCEPTABLE_SOUNDS.include?(individual_data) == true
         @list.append(individual_data)
       end
-    
     end
   end
 
@@ -33,7 +34,6 @@ ACCEPTABLE_SOUNDS = ["doop", "deep", "tee", "dee", "suu", "woop", "schwoop", "pl
       if ACCEPTABLE_SOUNDS.include?(individual_data) == true
         @list.prependd(individual_data)
       end
-    
     end
   end
 

@@ -39,7 +39,7 @@ RSpec.describe BeatBox do
     expect(beat_box_1.count).to eq (6)
   end
 
-  it "has a say method" do
+  it "has a play method" do
     beat_box_1 = BeatBox.new
     beat_box_1.append("beep boop ploop")
     beat_box_1.append("beep boop ploop")
@@ -66,6 +66,49 @@ RSpec.describe BeatBox do
     beat_box_1.append("beep boop ploop")
     beat_box_1.prependdd("dee tee")
     expect(beat_box_1.all).to eq("tee dee beep boop ploop beep boop ploop")
+  end
+
+  it "has a rate method that changes the rate of play" do
+    beat_box_1 = BeatBox.new
+    beat_box_1.append("beep boop ploop")
+    beat_box_1.append("beep boop ploop")
+    beat_box_1.play
+    expect(beat_box_1.rate).to eq 500
+    beat_box_1.rate = 100
+    expect(beat_box_1.rate).to eq 100
+    beat_box_1.play
+  end
+
+  it "has a voice method that changes the voice output" do
+    beat_box_1 = BeatBox.new
+    beat_box_1.append("beep boop ploop")
+    beat_box_1.append("beep boop ploop")
+    beat_box_1.play
+    expect(beat_box_1.voice).to eq ("Boing")
+    beat_box_1.voice = ("Ralph")
+    expect(beat_box_1.voice).to eq ("Ralph")
+    beat_box_1.play
+  end
+
+  it "has a reset_rate method" do
+    beat_box_1 = BeatBox.new
+    beat_box_1.append("beep boop ploop")
+    beat_box_1.append("beep boop ploop")
+    beat_box_1.play
+    expect(beat_box_1.rate).to eq 500
+    beat_box_1.rate = 100
+    expect(beat_box_1.rate).to eq 100
+    beat_box_1.play
+  end
+
+  it "has a reset_voice method" do
+    beat_box_1 = BeatBox.new
+    beat_box_1.append("beep boop ploop")
+    beat_box_1.append("beep boop ploop")
+    beat_box_1.voice = ("Ralph")
+    expect(beat_box_1.voice).to eq ("Ralph")
+    beat_box_1.reset_voice
+    expect(beat_box_1.voice).to eq ("Boing")
   end
 
 

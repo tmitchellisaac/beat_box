@@ -38,4 +38,19 @@ RSpec.describe BeatBox do
     beat_box_1.append("beep boop ploop")
     expect(beat_box_1.count).to eq (6)
   end
+
+  it "has a say method" do
+    beat_box_1 = BeatBox.new
+    beat_box_1.append("beep boop ploop")
+    beat_box_1.append("beep boop ploop")
+    beat_box_1.play
+  end
+
+  it "has a validation system through append" do
+  beat_box_1 = BeatBox.new
+  beat_box_1.append("beep boop ploop")
+  beat_box_1.append("beep boop Mississippi")
+  expect(beat_box_1.list.to_string).to eq("beep boop ploop beep boop")
+  end
+
 end

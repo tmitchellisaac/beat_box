@@ -15,7 +15,6 @@ RSpec.describe BeatBox do
     expect(beat_box_1.all).to eq("doop suu doop tee")
   end
     
-
   it "has a list attribute" do
     beat_box_1 = BeatBox.new
     expect(beat_box_1.list).to be_a LinkedList

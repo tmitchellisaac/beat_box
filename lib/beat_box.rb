@@ -8,9 +8,8 @@ ACCEPTABLE_SOUNDS = ["doop", "deep", "tee", "dee", "suu", "woop", "schwoop", "pl
       @list = LinkedList.new
     else
       @list = LinkedList.new
-    bb_input_string = bb_input.join
-    bb_input_array_final = bb_input_string.split
-        bb_input_array_final.each do |individual_data|
+      bb_input_array = bb_input.join.split
+      bb_input_array.each do |individual_data|
         if ACCEPTABLE_SOUNDS.include?(individual_data) == true
           @list.append(individual_data)
         end
@@ -62,7 +61,6 @@ ACCEPTABLE_SOUNDS = ["doop", "deep", "tee", "dee", "suu", "woop", "schwoop", "pl
     @voice = "Boing"
   end
 
-
   def play 
     if @rate == nil
       @rate = 500
@@ -74,4 +72,5 @@ ACCEPTABLE_SOUNDS = ["doop", "deep", "tee", "dee", "suu", "woop", "schwoop", "pl
       `say -r #{@rate} -v #{@voice} "#{@list.to_string}"`
     # `say -r 500 -v Boing "#{@list.to_string}"`
   end
+
 end

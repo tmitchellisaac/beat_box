@@ -70,7 +70,6 @@ RSpec.describe BeatBox do
     expect(beat_box_1.all).to eq("ploop boop beep")
   end
 
-
   it "has an all method" do 
     beat_box_1 = BeatBox.new
     beat_box_1.append("beep boop ploop")

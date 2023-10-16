@@ -15,6 +15,11 @@ RSpec.describe BeatBox do
     expect(beat_box_1.all).to eq("doop suu doop tee")
   end
     
+  it "can take only one argument" do
+    beat_box_1 = BeatBox.new("doop")
+    expect(beat_box_1.all).to eq("doop")
+  end
+
   it "has a list attribute" do
     beat_box_1 = BeatBox.new
     expect(beat_box_1.list).to be_a LinkedList
@@ -29,6 +34,7 @@ RSpec.describe BeatBox do
     beat_box_1 = BeatBox.new
     beat_box_1.append("beep boop ploop")
     expect(beat_box_1.list.head.data).to eq("beep")
+    expect(beat_box_1.all).to eq ("beep boop ploop")
   end
 
   it "has correct next_node value" do 
@@ -52,13 +58,13 @@ RSpec.describe BeatBox do
   end
 
   it "has a validation system through append" do
-  beat_box_1 = BeatBox.new
-  beat_box_1.append("beep boop ploop")
-  beat_box_1.append("beep boop Mississippi")
-  expect(beat_box_1.list.to_string).to eq("beep boop ploop beep boop")
+    beat_box_1 = BeatBox.new
+    beat_box_1.append("beep boop ploop")
+    beat_box_1.append("beep boop Mississippi")
+    expect(beat_box_1.list.to_string).to eq("beep boop ploop beep boop")
   end
 
-  it "has a beatbox append method" do
+  it "has a BeatBox append class method" do
     beat_box_1 = BeatBox.new
     beat_box_1.prependdd("beep boop ploop")
     expect(beat_box_1.all).to eq("ploop boop beep")

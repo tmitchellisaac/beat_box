@@ -8,12 +8,10 @@ ACCEPTABLE_SOUNDS = ["doop", "deep", "tee", "dee", "suu", "woop", "schwoop", "pl
       @list = LinkedList.new
     else
       @list = LinkedList.new
-    # separated_bb_data = bb_input.split(" ")
-    acceptable_sounds = ["doop", "deep", "tee", "dee", "suu", "woop", "schwoop", "ploop", "boop", "beep", "bop", "la", "na", "bop", "oom", "dum", "boom"]
     bb_input_string = bb_input.join
     bb_input_array_final = bb_input_string.split
         bb_input_array_final.each do |individual_data|
-        if acceptable_sounds.include?(individual_data) == true
+        if ACCEPTABLE_SOUNDS.include?(individual_data) == true
           @list.append(individual_data)
         end
       end
@@ -22,9 +20,8 @@ ACCEPTABLE_SOUNDS = ["doop", "deep", "tee", "dee", "suu", "woop", "schwoop", "pl
 
   def append(data_input)
     separated_data_array = data_input.split(" ")
-    acceptable_sounds = ["doop", "deep", "tee", "dee", "suu", "woop", "schwoop", "ploop", "boop", "beep", "bop", "la", "na", "bop", "oom", "dum", "boom"]
     separated_data_array.each do |individual_data|
-      if acceptable_sounds.include?(individual_data) == true
+      if ACCEPTABLE_SOUNDS.include?(individual_data) == true
         @list.append(individual_data)
       end
     
@@ -33,9 +30,8 @@ ACCEPTABLE_SOUNDS = ["doop", "deep", "tee", "dee", "suu", "woop", "schwoop", "pl
 
   def prependdd(data_input)
     separated_data_array = data_input.split(" ")
-    acceptable_sounds = ["doop", "deep", "tee", "dee", "suu", "woop", "schwoop", "ploop", "boop", "beep", "bop", "la", "na", "bop", "oom", "dum", "boom"]
     separated_data_array.each do |individual_data|
-      if acceptable_sounds.include?(individual_data) == true
+      if ACCEPTABLE_SOUNDS.include?(individual_data) == true
         @list.prependd(individual_data)
       end
     

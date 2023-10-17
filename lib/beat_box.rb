@@ -23,7 +23,6 @@ ACCEPTABLE_SOUNDS = ["doop", "deep", "tee", "dee", "suu", "woop", "schwoop", "pl
       if ACCEPTABLE_SOUNDS.include?(individual_data) == true
         @list.append(individual_data)
       end
-    
     end
   end
 

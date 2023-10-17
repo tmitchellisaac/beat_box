@@ -30,7 +30,7 @@ RSpec.describe BeatBox do
     expect(beat_box_1.list.head).to eq nil
   end
 
-  it "has a beatbox append method" do
+  it "has a BeatBox append method" do
     beat_box_1 = BeatBox.new
     beat_box_1.append("beep boop ploop")
     expect(beat_box_1.list.head.data).to eq("beep")
@@ -43,9 +43,16 @@ RSpec.describe BeatBox do
     expect(beat_box_1.list.head.next_node.data).to eq("boop")
   end
 
+  it "has a different next_node value" do
+    beat_box_1 = BeatBox.new
+    beat_box_1.append("beep doop ploop")
+    expect(beat_box_1.list.head.next_node.data).to eq("doop")
+  end
+
   it "has a count method for BeatBox class" do
     beat_box_1 = BeatBox.new
     beat_box_1.append("beep boop ploop")
+    expect(beat_box_1.count).to eq (3)
     beat_box_1.append("beep boop ploop")
     expect(beat_box_1.count).to eq (6)
   end
@@ -68,8 +75,9 @@ RSpec.describe BeatBox do
     beat_box_1 = BeatBox.new
     beat_box_1.prependdd("beep boop ploop")
     expect(beat_box_1.all).to eq("ploop boop beep")
+    beat_box_1.prependdd("suu")
+    expect(beat_box_1.all).to eq("suu ploop boop beep")
   end
-
 
   it "has an all method" do 
     beat_box_1 = BeatBox.new
@@ -80,6 +88,9 @@ RSpec.describe BeatBox do
   end
 
   it "has a rate method that changes the rate of play" do
+    #could not get the rate to default to a value (500)
+    # had to use `.play` method before to set rate to 500
+    # or change rate first
     beat_box_1 = BeatBox.new
     beat_box_1.append("beep boop ploop")
     beat_box_1.append("beep boop ploop")
@@ -91,6 +102,10 @@ RSpec.describe BeatBox do
   end
 
   it "has a voice method that changes the voice output" do
+    # same with changing the voice
+    # had to run `.play` before to get a voice to be inserted
+    # ex. if you called beat_box_1.voice before running `.play` method
+    # the value would return nil
     beat_box_1 = BeatBox.new
     beat_box_1.append("beep boop ploop")
     beat_box_1.append("beep boop ploop")

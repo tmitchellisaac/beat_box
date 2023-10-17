@@ -1,5 +1,4 @@
 require './spec/spec_helper'
-
 require './lib/node'
 require './lib/list'
 
@@ -69,7 +68,6 @@ RSpec.describe LinkedList do
     expect(list_1.to_string).to eq ("doop")
   end
 
-
   it "has a string method to print data from every node" do
     list_1 = LinkedList.new
     list_1.append("doop")
@@ -93,7 +91,6 @@ RSpec.describe LinkedList do
     list_1.append("ploop")
     list_1.prependd("suu")
     list_1.prependd("woop")
-
     expect(list_1.to_string).to eq("woop suu doop ploop")
   end
 
@@ -190,5 +187,4 @@ RSpec.describe LinkedList do
     list_1.insert(3, "schwoop")
     expect(list_1.includes?("ploop")).to eq(true)
   end
-
 end
